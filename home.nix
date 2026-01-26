@@ -31,15 +31,16 @@
     
     programs = {
         git = {
-	    enable = true;
-	    settings = {
-	    	user = {
-		    name = "Andrew McDowell";
-		    email = "andrewmcdowell2000@gmail.com";
-		};
-		init.defaultBranch = "main";
+	        enable = true;
+	        settings = {
+	    	        user = {
+		            name = "Andrew McDowell";
+		            email = "andrewmcdowell2000@gmail.com";
+		        };
+		        
+                init.defaultBranch = "main";
+	        };
 	    };
-	};
         go.enable = true;
         obs-studio.enable = true;
         obs-studio.plugins = [ pkgs.obs-studio-plugins.wlrobs ];
