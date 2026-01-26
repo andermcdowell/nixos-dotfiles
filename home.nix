@@ -41,6 +41,12 @@
                 init.defaultBranch = "main";
 	        };
 	    };
+        gh = {
+            enable = true;
+            gitCredentialHelper = {
+                enable = true;
+            };
+        };
         go.enable = true;
         obs-studio.enable = true;
         obs-studio.plugins = [ pkgs.obs-studio-plugins.wlrobs ];
