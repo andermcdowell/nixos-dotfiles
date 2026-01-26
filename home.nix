@@ -6,43 +6,44 @@
     home.stateVersion = "25.05";
 
     imports = [
-    	./modules/bash.nix
+        ./modules/bash.nix
+        ./modules/niri/niri.nix
     ];
 
     home.packages = with pkgs; [
         zsh-autocomplete
         zsh-syntax-highlighting
         zsh-powerlevel10k
-    	protonup-ng
+        protonup-ng
         gh
     ];
 
     home.sessionVariables = {
-    	STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+        STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
     };
 
     home.pointerCursor = {
-    	enable = true;
-    	gtk.enable = true;
-    	package = pkgs.catppuccin-cursors.mochaSapphire;
-    	name = "catppuccin-mocha-sapphire-cursors";
-    	size = 12;
+        enable = true;
+        gtk.enable = true;
+        package = pkgs.catppuccin-cursors.mochaSapphire;
+        name = "catppuccin-mocha-sapphire-cursors";
+        size = 12;
     };
     
     programs = {
         git = {
-	        enable = true;
-	        settings = {
-	    	    user = {
-		            name = "Andrew McDowell";
-		            email = "andrewmcdowell2000@gmail.com";
-		        };
+            enable = true;
+            settings = {
+                user = {
+                    name = "Andrew McDowell";
+                    email = "andrewmcdowell2000@gmail.com";
+                };
 
                 pull.ff = "only";
-		        
+
                 init.defaultBranch = "main";
-	        };
-	    };
+            };
+        };
         gh = {
             enable = true;
             gitCredentialHelper = {
