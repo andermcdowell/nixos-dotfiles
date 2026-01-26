@@ -9,11 +9,12 @@
     	./modules/bash.nix
     ];
 
-    home.packages = [
-        pkgs.zsh-autocomplete
-        pkgs.zsh-syntax-highlighting
-        pkgs.zsh-powerlevel10k
-    	pkgs.protonup-ng
+    home.packages = with pkgs; [
+        zsh-autocomplete
+        zsh-syntax-highlighting
+        zsh-powerlevel10k
+    	protonup-ng
+        gh
     ];
 
     home.sessionVariables = {
