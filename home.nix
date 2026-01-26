@@ -33,10 +33,12 @@
         git = {
 	        enable = true;
 	        settings = {
-	    	        user = {
+	    	    user = {
 		            name = "Andrew McDowell";
 		            email = "andrewmcdowell2000@gmail.com";
 		        };
+
+                pull.ff = "only";
 		        
                 init.defaultBranch = "main";
 	        };
