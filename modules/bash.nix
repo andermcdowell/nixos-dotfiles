@@ -12,8 +12,8 @@
       cat = "bat";
       ta = "tmux a";
       ".." = "cd ..";
-      update = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixBox";
-      upgrade = "sudo nixos-rebuild switch --upgrade --flake ~/nixos-dotfiles#nixBox";
+      update = "nixos-rebuild --sudo switch --flake ~/nixos-dotfiles#nixBox";
+      upgrade = "sudo nixos-rebuild --sudo switch --upgrade --flake ~/nixos-dotfiles#nixBox";
     };
 
     # Your environment variables

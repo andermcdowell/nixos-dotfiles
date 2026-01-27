@@ -8,6 +8,7 @@
     imports = [
         ./modules/bash.nix
         ./modules/niri/niri.nix
+        ./modules/alacritty.nix
     ];
 
     home.packages = with pkgs; [
@@ -49,6 +50,10 @@
             gitCredentialHelper = {
                 enable = true;
             };
+        };
+        neovim = {
+            enable = true;
+            defaultEditor = true;
         };
         go.enable = true;
         obs-studio.enable = true;

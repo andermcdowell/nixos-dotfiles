@@ -62,7 +62,7 @@
     description = "Andrew McDowell";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-	vintagestory
+	    vintagestory
     ];
   };
 
@@ -119,7 +119,7 @@
     docker-compose
     pavucontrol
     xdg-desktop-portal-wlr
-    chromium
+    google-chrome
     mangohud
     starship
 
@@ -138,22 +138,30 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
   
+  security.rtkit.enable = true;
   services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    #jack.enable = true;
   };
   services.tuned.enable = true;
 
   xdg.portal.wlr.enable = true;
 
   fonts = {
-      fontconfig.enable = true;
       packages = with pkgs; [
         nerd-fonts.monaspace
         noto-fonts-cjk-sans
       ];
+
+      fontconfig = {
+          enable = true;
+          defaultFonts = {
+            monospace = ["MonaspiceAr Nerd Font Mono"];
+          };
+      };
   };
 
   programs = {
@@ -161,18 +169,17 @@
       niri.enable = true;
       xwayland.enable = true;
       wireshark.enable = true;
-      chromium.enable = true;
       
       steam = {
           enable = true;
           remotePlay.openFirewall = true;
+          localNetworkGameTransfers.openFirewall = true;
       };
       gamemode.enable = true;
   };
   virtualisation.docker.enable = true;
 
   environment.variables = {
-      LD_LIBRARY_PATH = "/run/opengl-driver/lib";
       ELECTRON_OZONE_PLATFORM_HINT = "wayland";
       OZONE_PLATFORM = "wayland";
       GDK_BACKEND = "wayland";
