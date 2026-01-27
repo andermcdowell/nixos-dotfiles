@@ -6,8 +6,7 @@
 
         settings = {
             window = {
-                dynamic_padding = true;
-                decorations = none;
+                decorations = "none";
                 opacity = 0.8;
             };
 

@@ -125,7 +125,7 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        on
+        off
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -200,6 +200,8 @@ animations {
 window-rule {
     geometry-corner-radius 8
     clip-to-geometry true
+
+    draw-border-with-background false
 }
 
 // Open the Chromium picture-in-picture player as floating by default.
