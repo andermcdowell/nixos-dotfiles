@@ -12,9 +12,6 @@
     ];
 
     home.packages = with pkgs; [
-        zsh-autocomplete
-        zsh-syntax-highlighting
-        zsh-powerlevel10k
         protonup-ng
         gh
     ];

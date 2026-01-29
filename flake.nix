@@ -31,5 +31,7 @@
                 ./noctalia.nix
 			];
 		};
-	};
+        # Development shells in ./shells
+        devShells = import ./shells { inherit nixpkgs; };
+    };
 }

@@ -96,6 +96,9 @@
     nodejs
     dotnet-sdk
     cargo
+    sdl3
+    sdl3-image
+    sdl3-ttf
 
     steam-run
     curl
@@ -118,10 +121,11 @@
     docker
     docker-compose
     pavucontrol
-    xdg-desktop-portal-wlr
+    xdg-desktop-portal-gnome
     google-chrome
     mangohud
     starship
+    easyeffects
 
     xwayland
     xwayland-satellite
@@ -148,7 +152,19 @@
   };
   services.tuned.enable = true;
 
-  xdg.portal.wlr.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gnome
+    ];
+    config = {
+      common = {
+        default = [
+          "gnome"
+        ];
+      };
+    };
+  };
 
   fonts = {
       packages = with pkgs; [
